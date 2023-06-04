@@ -85,7 +85,7 @@ export const ListNote = ({ navigation })=>{
                 
 
                     <ContainerDiv >
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Вакцинация')}>
                         <ContainerBtn style={styles.box}>
                             <ImgNote source={require('../image/vaccine.png')} ></ImgNote>
                             <Text>Вакцинация</Text>
