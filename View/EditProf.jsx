@@ -5,21 +5,35 @@ import React from 'react';
 
 
 export const EditProf = ({ navigation })=>{
+    const [name, onChangeName] = React.useState('Elizabet');
+    const [breed, onChangebreed] = React.useState('Африканский бульдог');
+    const [age, onChangeage] = React.useState('7 лет');
+
     return (
         <View>
            <View style={styles.MainDiv}> 
                 <Image style={styles.UploadImg} source={require('../image/123.jpg')}></Image>
+
                 <View style={styles.ContainerDiv}>
                     <Text style={styles.HeaderInput}>Имя:</Text>
-                    <TextInput style={styles.TextInputs} value="Elizabet" ></TextInput>
+                    <TextInput style={styles.TextInputs} 
+                    onChangeText={onChangeName}
+                    value={name}
+                    ></TextInput>
                 </View>
                 <View style={styles.ContainerDiv}>
                     <Text style={styles.HeaderInput}>Порода:</Text>
-                    <TextInput style={styles.TextInputs} value="Африканский бульдог"></TextInput>
+                    <TextInput style={styles.TextInputs} 
+                    onChangeText={onChangebreed}
+                    value={breed}
+                    ></TextInput>
                 </View>
                 <View style={styles.ContainerDiv}>
                     <Text style={styles.HeaderInput}>Возраст:</Text>
-                    <TextInput style={styles.TextInputs} value="7 лет"></TextInput>
+                    <TextInput style={styles.TextInputs} 
+                    onChangeText={onChangeage}
+                    value={age}
+                    ></TextInput>
                 </View>
                 <View style={styles.ContainerDiv}>
                     {/* <Button style={styles.TextBtn} title='Сохранить' fontSize={30} padding={15} color={'rgb(114, 217, 139)'}/> */}

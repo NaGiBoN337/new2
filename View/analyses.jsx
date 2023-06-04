@@ -5,53 +5,28 @@ import { SelectList } from 'react-native-dropdown-select-list'
 
 
 
-export const Vaccination = ({ navigation })=>{
-    const [selectedLabel, setSelectedLabel] = React.useState("");
-    const [selectedTime, setSelectedTime] = React.useState("");
+export const Analyses = ({ navigation })=>{
     const [valueCom, onChangeComment] = React.useState('');
-
-    const dataVac = [
-        {key:'1', value:'Препарат1'},
-        {key:'2', value:'Препарат2'},
-        {key:'3', value:'Препарат3'},
-        {key:'4', value:'Препарат4'},
-        {key:'5', value:'Препарат5'},
-    ]
-    const dataTimeVac =[
-        {key:'1', value:'Три недели'},
-        {key:'2', value:'Раз в год'},
-        {key:'3', value:'Раз в пол года'},
-    ]
+ 
     return (
         <ScrollView>
            <View style={styles.MainDiv}> 
-                <Image style={styles.UploadImg} source={require('../image/vaccine.png')}></Image>
+                <Image style={styles.HeaderImg} source={require('../image/lab.png')}></Image>
                 
                 <View style={styles.ContainerDiv}>
-                    <Text style={styles.HeaderInput}>Навание препарата:</Text>
-                    <SelectList  
-                    setSelected={(val) => setSelectedLabel(val)} 
-                    data={dataVac} 
-                    save="value"
-                    searchPlaceholder="поиск"
-                    placeholder = "не выбрано"
-                    />
+                    <Text style={styles.HeaderInput}>Навание проверки:</Text>
+                    <TextInput numberOfLines={4} style={styles.TextInputs} placeholder=''></TextInput>
                 </View>
-                <View style={styles.ContainerDiv}>
-                    <Text style={styles.HeaderInput}>Повторяемость:</Text>
-                    <SelectList  
-                    setSelected={(val) => setSelectedTime(val)} 
-                    data={dataTimeVac} 
-                    save="value"
-                    searchPlaceholder="поиск"
-                    placeholder = {dataTimeVac[0].value}
-                    />
-                </View>
+    
                 <View style={styles.ContainerDiv}>
                     <Text style={styles.HeaderInput}>Дата:</Text>
-                    <TextInput numberOfLines={4} style={styles.TextInputs} value={"Сделать пик даты"}></TextInput>
+                    <TextInput numberOfLines={4} style={styles.TextInputs} placeholder="Сделать пик даты"></TextInput>
                 </View>
 
+                <View style={styles.ContainerDiv}>
+                    <Text style={styles.HeaderInput}>Прикрепить фото\документ:</Text>
+                    <Image style={styles.UploadImg} source={require('../image/upload.png')}></Image>
+                </View>
                 <View style={styles.ContainerDiv}>
                     <Text style={styles.HeaderInput}>Коментарий:</Text>
                     <TextInput
@@ -64,7 +39,6 @@ export const Vaccination = ({ navigation })=>{
                     onChangeText={val => onChangeComment(val)}
                     ></TextInput>
                 </View>
-
                 <View style={styles.ContainerDiv}>
                     {/* <Button style={styles.TextBtn} title='Сохранить' fontSize={30} padding={15} color={'rgb(114, 217, 139)'}/> */}
                     <Text style={styles.TextBtn}> Сохранить</Text>
@@ -84,11 +58,18 @@ const styles = StyleSheet.create({
         fontSize: 20,
         borderRadius: 10,
     },
-    UploadImg:{
+    HeaderImg:{
         borderRadius:30,
         marginTop: '5%',
         width: 140,
         height: 140,
+        alignSelf: 'center',
+    },
+    UploadImg:{
+        borderRadius:30,
+        marginTop: '5%',
+        width: 100,
+        height: 100,
         alignSelf: 'center',
     },
     MainDiv:{

@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-import { StyleSheet, Text, View, Image,Button,TouchableOpacity,FlatList,TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, Image,Button,TouchableOpacity,FlatList,TouchableWithoutFeedback,ScrollView } from 'react-native';
 
 
 const MainDiv = styled.View`
@@ -65,7 +65,7 @@ const Textbtn = styled.Text`
 `;
 export const ListNote = ({ navigation })=>{
         return (
-            <View>
+            <ScrollView>
                 <MainDiv>
                     <Header>
                        
@@ -92,7 +92,7 @@ export const ListNote = ({ navigation })=>{
                         </ContainerBtn>
                         </TouchableOpacity>
 
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Анализы')}>
                         <ContainerBtn style={styles.box}>
                             <ImgNote source={require('../image/lab.png')} ></ImgNote>
                             <Text>Анализы</Text>
@@ -102,10 +102,12 @@ export const ListNote = ({ navigation })=>{
                     </ContainerDiv>
 
                     <ContainerDiv>
+                        <TouchableOpacity onPress={() => navigation.navigate('Рентген')}>
                         <ContainerBtn style={styles.box}>
                             <ImgNote source={require('../image/x-rayy.png')} ></ImgNote>
                             <Text>Узи/рентген</Text>
                         </ContainerBtn>
+                        </TouchableOpacity>
 
                         <ContainerBtn style={styles.box}>
                             <ImgNote source={require('../image/cleaning.png')} ></ImgNote>
@@ -114,17 +116,24 @@ export const ListNote = ({ navigation })=>{
                     </ContainerDiv>
 
                     <ContainerDiv>
+                        <TouchableOpacity onPress={() => navigation.navigate('Посейщение врача')}>
                         <ContainerBtn style={styles.box}>
                             <ImgNote source={require('../image/veterinarian.png')} ></ImgNote>
                             <Text>Посейщение врача</Text>
                         </ContainerBtn>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Калькулятор веса')}>
+                        <ContainerBtn style={styles.box}>
+                            <ImgNote source={require('../image/bmi.png')} ></ImgNote>
+                            <Text>Учет веса</Text>
+                        </ContainerBtn>
+                        </TouchableOpacity>
                     </ContainerDiv>
-                    
                     
                     <Textbtn style={styles.box}>Все записи</Textbtn>
                     
                 </MainDiv>
-            </View>
+            </ScrollView>
         );
 }
 
