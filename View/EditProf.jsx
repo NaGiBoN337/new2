@@ -3,7 +3,6 @@ import { StyleSheet, Text, View,TextInput, Image,Button,TouchableOpacity,FlatLis
 import React from 'react';
 
 
-
 export const EditProf = ({ navigation })=>{
     const [name, onChangeName] = React.useState('Elizabet');
     const [breed, onChangebreed] = React.useState('Африканский бульдог');

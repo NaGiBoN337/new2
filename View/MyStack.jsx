@@ -2,7 +2,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import { ListPet} from "./page_listpet"
-import { Create_profile } from './page_create_prof';
+import { Create_profile } from './Create_profile';
 import { ListNote } from './ListNote';
 import { EditProf } from './EditProf';
 import { Vaccination } from './Vaccination';
@@ -10,9 +10,10 @@ import { Analyses } from './analyses';
 import { Xray } from './Xray';
 import { DoctorVisit } from './DoctorVisit';
 import { Calc } from './Calc';
+import { Preventive } from './Preventive';
+import { Hygiene } from './Hygiene';
 
 const Stack = createNativeStackNavigator();
-
 
 export const Navigation = () => {
     return(
@@ -26,6 +27,8 @@ export const Navigation = () => {
             <Stack.Screen name='Рентген' component={Xray}/>
             <Stack.Screen name='Посейщение врача' component={DoctorVisit}/>
             <Stack.Screen name='Калькулятор веса' component={Calc}/>
+            <Stack.Screen name='Профилактические меры' component={Preventive}/>
+            <Stack.Screen name='Гигиена' component={Hygiene}/>
         </Stack.Navigator>
     )
 }

@@ -108,11 +108,12 @@ export const ListNote = ({ navigation })=>{
                             <Text>Узи/рентген</Text>
                         </ContainerBtn>
                         </TouchableOpacity>
-
+                        <TouchableOpacity onPress={() => navigation.navigate('Профилактические меры')}>
                         <ContainerBtn style={styles.box}>
                             <ImgNote source={require('../image/cleaning.png')} ></ImgNote>
                             <Text>Проф. меры</Text>
                         </ContainerBtn>
+                        </TouchableOpacity>
                     </ContainerDiv>
 
                     <ContainerDiv>
