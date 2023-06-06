@@ -1,18 +1,20 @@
 
 import { StyleSheet, Text, View,TextInput, Image,Button,TouchableOpacity,FlatList,TouchableWithoutFeedback } from 'react-native';
-import React from 'react';
-
+import React, { useState } from 'react';
+import BtnTime from '../components/BtnTime';
 
 export const EditProf = ({ navigation })=>{
     const [name, onChangeName] = React.useState('Elizabet');
     const [breed, onChangebreed] = React.useState('Африканский бульдог');
     const [age, onChangeage] = React.useState('7 лет');
 
+    const startTime = new Date(); 
+
     return (
         <View>
            <View style={styles.MainDiv}> 
                 <Image style={styles.UploadImg} source={require('../image/123.jpg')}></Image>
-
+                
                 <View style={styles.ContainerDiv}>
                     <Text style={styles.HeaderInput}>Имя:</Text>
                     <TextInput style={styles.TextInputs} 
@@ -27,12 +29,13 @@ export const EditProf = ({ navigation })=>{
                     value={breed}
                     ></TextInput>
                 </View>
+                
                 <View style={styles.ContainerDiv}>
-                    <Text style={styles.HeaderInput}>Возраст:</Text>
-                    <TextInput style={styles.TextInputs} 
-                    onChangeText={onChangeage}
-                    value={age}
-                    ></TextInput>
+                    <Text style={styles.HeaderInput}>Дата рождения:</Text>
+                    <BtnTime 
+                     startTime = {startTime}
+                     textBtn ="Сменить дату рождения"
+                    ></BtnTime>
                 </View>
                 <View style={styles.ContainerDiv}>
                     {/* <Button style={styles.TextBtn} title='Сохранить' fontSize={30} padding={15} color={'rgb(114, 217, 139)'}/> */}
@@ -43,6 +46,7 @@ export const EditProf = ({ navigation })=>{
     );
 }
 const styles = StyleSheet.create({
+  
     UploadImg:{
         borderRadius:30,
         marginTop: '5%',
