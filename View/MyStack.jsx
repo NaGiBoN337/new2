@@ -12,7 +12,7 @@ import { DoctorVisit } from './DoctorVisit';
 import { Calc } from './Calc';
 import { Preventive } from './Preventive';
 import { Hygiene } from './Hygiene';
-
+import { Notes } from './Notes';
 const Stack = createNativeStackNavigator();
 
 export const Navigation = () => {
@@ -29,6 +29,7 @@ export const Navigation = () => {
             <Stack.Screen name='Калькулятор веса' component={Calc}/>
             <Stack.Screen name='Профилактические меры' component={Preventive}/>
             <Stack.Screen name='Гигиена' component={Hygiene}/>
+            <Stack.Screen name='Основные записи' component={Notes}/>
         </Stack.Navigator>
     )
 }

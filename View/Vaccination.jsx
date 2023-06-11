@@ -2,7 +2,7 @@
 import { StyleSheet, Text, View,TextInput, Image,Button,TouchableOpacity,FlatList,TouchableWithoutFeedback,ScrollView } from 'react-native';
 import React from 'react';
 import { SelectList } from 'react-native-dropdown-select-list'
-
+import BtnTime from '../components/BtnTime';
 
 
 export const Vaccination = ({ navigation })=>{
@@ -49,7 +49,10 @@ export const Vaccination = ({ navigation })=>{
                 </View>
                 <View style={styles.ContainerDiv}>
                     <Text style={styles.HeaderInput}>Дата:</Text>
-                    <TextInput numberOfLines={4} style={styles.TextInputs} value={"Сделать пик даты"}></TextInput>
+                    <BtnTime
+                    startTime={new Date()}
+                    textBtn={"Выбор даты"}
+                    ></BtnTime>
                 </View>
 
                 <View style={styles.ContainerDiv}>

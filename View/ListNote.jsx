@@ -131,7 +131,7 @@ export const ListNote = ({ navigation })=>{
                         </TouchableOpacity>
                     </ContainerDiv>
                     
-                    <Textbtn style={styles.box}>Все записи</Textbtn>
+                    <Textbtn style={styles.box} onPress={() => navigation.navigate('Основные записи')}>Все записи</Textbtn>
                     
                 </MainDiv>
             </ScrollView>

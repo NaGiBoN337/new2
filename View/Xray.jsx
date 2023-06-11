@@ -2,6 +2,7 @@
 import { StyleSheet, Text, View,TextInput, Image,Button,TouchableOpacity,FlatList,TouchableWithoutFeedback,ScrollView } from 'react-native';
 import React from 'react';
 import { SelectList } from 'react-native-dropdown-select-list'
+import BtnTime from '../components/BtnTime';
 
 
 
@@ -16,11 +17,14 @@ export const Xray = ({ navigation })=>{
     
                 <View style={[styles.ContainerDiv,styles.NorightPad]}>
                     <Text style={[styles.HeaderInput]}>Дата добавление нового снимка:</Text>
-                    <TextInput numberOfLines={4} style={[styles.TextInputs,styles.TestInpuRight]} placeholder="Сделать пик даты"></TextInput>
+                    
                 </View>
 
             <View style={styles.MainDiv}>
-
+                    <BtnTime
+                    startTime={new Date()}
+                    textBtn={"Выбрать время"}
+                    ></BtnTime>
                 <View style={styles.ContainerDiv}>
                     <Text style={styles.HeaderInput}>Прикрепить фото\документ:</Text>
                     <Image style={styles.UploadImg} source={require('../image/upload.png')}></Image>

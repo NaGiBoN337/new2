@@ -42,6 +42,9 @@ const BtnTime = ({ startTime,textBtn }) => {
 };
 
 export default BtnTime;
+
+
+
 const styles = StyleSheet.create({
     MyView:{
         justifyContent:'space-around',

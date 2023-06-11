@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image,Button,TouchableOpacity,FlatList,Touchabl
 import { SelectList } from 'react-native-dropdown-select-list'
 import { TextInput} from 'react-native';
 import React from 'react';
-
+import BtnTime from '../components/BtnTime';
 import { launchImageLibrary } from "react-native-image-picker";
 
 const TextName = styled.TextInput`
@@ -115,7 +115,10 @@ loadPhoto = async () => {
                 </ContainerDiv>
                 <ContainerDiv>
                     <Headerinput>Возраст в годах:</Headerinput>
-                    <TextName maxLength={2} placeholder="мне 7 лет" keyboardType = 'numeric'/>
+                    <BtnTime
+                        startTime={new Date()}
+                        textBtn ="Выбрать дату рождения"
+                    ></BtnTime>
                 </ContainerDiv>
                 <ContainerDiv>
                     <Headerinput>Гендер:</Headerinput>
